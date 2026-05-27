@@ -1,27 +1,25 @@
-require('config.lazy')
+-- Enable line numbers
+vim.o.number = true
 
-vim.o.background = "dark" -- or "light" for light mode
-vim.cmd([[colorscheme gruvbox]])
+-- Disable line wrapping
+vim.o.wrap = false
 
-require('gitsigns').setup {
-  signs = {
-    add          = { text = '▎' },
-    change       = { text = '▕' },
-    delete       = { text = '▁' },
-    topdelete    = { text = '‾' },
-    changedelete = { text = '≃' },
-  },
-}
-vim.api.nvim_set_hl(0, 'GitSignsAdd',    { fg = '#00ff00'})
-vim.api.nvim_set_hl(0, 'GitSignsChange', { fg = '#00ffff'})
-vim.api.nvim_set_hl(0, 'GitSignsDelete', { fg = '#ff0000'})
+-- Adjust the width of the tab character
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
 
+-- Ignore case when the search pattern is all lowercase
+vim.o.smartcase = true
+vim.o.ignorecase = true
 
-vim.opt.number = true
-vim.opt.cursorline = true
+-- Clear search highlights after submit
+vim.o.hlsearch = false
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-vim.opt.scrolloff = 5
+-- Reserve a space in the gutter for signs. Some plugins use this to show icons.
+vim.o.signcolumn = 'yes'
+
+-- Use system clipboard
+vim.o.clipboard = 'unnamedplus'
+
+vim.g.mapleader = vim.keycode('<Space>')
+
