@@ -21,5 +21,5 @@ vim.o.signcolumn = 'yes'
 -- Use system clipboard
 vim.o.clipboard = 'unnamedplus'
 
-vim.g.mapleader = vim.keycode('<Space>')
+-- vim.g.mapleader = vim.keycode('<Space>')
 
